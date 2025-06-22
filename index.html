@@ -1,0 +1,312 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM Water Service - The Gold Standard of Purity</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Premium Theme: Deep Teal & Gold */
+        body { font-family: 'Poppins', sans-serif; background-color: #f7f7f7; color: #333; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+        .accent-gold { color: #B8860B; }
+        .accent-teal-bg { background-color: #008080; }
+        .hero-section { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?q=80&w=1974&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; }
+        
+        .btn-gold {
+            background: #B8860B; color: white;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            font-weight: 600; letter-spacing: 0.5px;
+            border-radius: 0.5rem; padding: 0.8rem 1.75rem;
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+        .btn-gold:hover { background-color: #a3760a; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(184, 134, 11, 0.4); }
+        
+        .card {
+            background-color: white; border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12); }
+        
+        html { scroll-behavior: smooth; }
+        
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: opacity 1s ease, visibility 1s ease; }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
+
+        .logo-svg { width: 150px; height: auto; }
+        .logo-svg path { stroke: #B8860B; stroke-width: 2.5; fill: transparent; stroke-dasharray: 1500; stroke-dashoffset: 1500; animation: draw 3s ease-in-out forwards; }
+        @keyframes draw { to { stroke-dashoffset: 0; } }
+        
+        .form-input {
+            background-color: #f3f4f6; border: 1px solid #d1d5db; color: #111827;
+            border-radius: 0.5rem; padding: 0.75rem 1rem; width: 100%;
+        }
+        .form-input:focus {
+             border-color: #B8860B; outline: none;
+             box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+        }
+        .payment-radio:checked + label { border-color: #B8860B; background-color: #fffbeb; }
+        .offer-checkbox:checked { background-color: #B8860B; border-color: #a3760a; }
+        .offer-disabled { opacity: 0.6; cursor: not-allowed; }
+        .offer-disabled label, .offer-disabled input { cursor: not-allowed; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div id="preloader">
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20,80 C5,80 5,20 20,20 L40,20 C55,20 55,40 40,40 L20,40" />
+           <path d="M60,20 L80,20 C95,20 95,80 80,80 L60,80 M60,50 L80,50" />
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-wider text-gray-900">S<span class="accent-gold">M</span> Water</a>
+            <nav class="hidden md:flex space-x-8 items-center text-base">
+                <a href="#home" class="text-gray-600 hover:accent-gold transition font-medium">Home</a>
+                <a href="#products" class="text-gray-600 hover:accent-gold transition font-medium">Products</a>
+                <a href="#testimonials" class="text-gray-600 hover:accent-gold transition font-medium">Ratings</a>
+                <a href="#event-inquiry" class="text-gray-600 hover:accent-gold transition font-medium">Event Orders</a>
+                <a href="#order" class="text-gray-600 hover:accent-gold transition font-medium">Order Now</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-900"><i class="fas fa-bars text-2xl"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4 border-t">
+             <a href="#home" class="block py-2 text-gray-600 hover:accent-gold">Home</a>
+             <a href="#products" class="block py-2 text-gray-600 hover:accent-gold">Products</a>
+             <a href="#testimonials" class="block py-2 text-gray-600 hover:accent-gold">Ratings</a>
+             <a href="#event-inquiry" class="block py-2 text-gray-600 hover:accent-gold">Event Orders</a>
+             <a href="#order" class="block py-2 text-gray-600 hover:accent-gold">Order Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section text-white min-h-[90vh] flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-6xl md:text-8xl font-bold mb-4 leading-tight">The Art of Pure Water.</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 text-gray-200">Delivered with unmatched quality and service, for a healthier tomorrow.</p>
+                <a href="#order" class="btn-gold"><i class="fas fa-tint mr-2"></i> Order Now</a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-bold text-gray-900">Our Signature Products</h2><div class="w-24 h-1.5 bg-gradient-to-r from-amber-400 to-yellow-500 mx-auto mt-4 rounded-full"></div></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <div class="card flex flex-col"><div class="overflow-hidden"><img src="https://placehold.co/600x600/B8860B/FFFFFF?text=The+Classic+Jar" alt="20 Litre RO Water Jar" class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110"></div><div class="p-8 text-center flex-grow flex flex-col"><h3 class="text-3xl font-bold text-gray-900">20 Litre Jar</h3><p class="text-gray-600 my-3 flex-grow">The classic choice for families and offices.</p><p class="text-5xl font-bold accent-gold mt-2">₹20</p></div></div>
+                    <div class="card flex flex-col"><div class="overflow-hidden"><img src="https://placehold.co/600x600/f3f4f6/333333?text=The+Elite+Bottles" alt="1 Litre Water Bottles Box" class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110"></div><div class="p-8 text-center flex-grow flex flex-col"><h3 class="text-3xl font-bold text-gray-900">1L Bottles (Box)</h3><p class="text-gray-600 my-3 flex-grow">Perfect for meetings, events, and guests.</p><p class="text-5xl font-bold accent-gold mt-2">₹240 <span class="text-lg font-medium text-gray-500">/ 24</span></p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Ratings Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-teal-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-bold text-gray-900">Words of Trust</h2><div class="w-24 h-1.5 bg-gradient-to-r from-amber-400 to-yellow-500 mx-auto mt-4 rounded-full"></div></div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card p-8 text-center"><img src="https://placehold.co/60x60/F59E0B/FFFFFF?text=A" alt="Amit ka chehra" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg"><h3 class="font-bold text-xl text-gray-900">Amit Sharma</h3><div class="accent-gold my-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-600 italic">"Service bohot fast hai aur paani ki quality bohot acchi. Main pichle 6 mahine se inhi se paani le raha hoon."</p></div>
+                    <div class="card p-8 text-center"><img src="https://placehold.co/60x60/3B82F6/FFFFFF?text=R" alt="Reena ka chehra" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg"><h3 class="font-bold text-xl text-gray-900">Reena Patel</h3><div class="accent-gold my-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div><p class="text-gray-600 italic">"Time par delivery aur saaf-suthre jars. Bachchon ke liye saaf paani ki chinta ab door ho gayi. Thank you!"</p></div>
+                    <div class="card p-8 text-center"><img src="https://placehold.co/60x60/10B981/FFFFFF?text=S" alt="Sunil ka chehra" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-white shadow-lg"><h3 class="font-bold text-xl text-gray-900">Sunil Das</h3><div class="accent-gold my-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><p class="text-gray-600 italic">"First order offer bohot accha tha. Sirf 5 rupaye mein jar mil gaya. Ab se main permanent customer hoon!"</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Inquiry Section -->
+        <section id="event-inquiry" class="py-16 md:py-24">
+             <div class="container mx-auto px-6"><div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12"><div class="md:w-1/2"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" class="rounded-lg shadow-2xl w-full h-full object-cover" alt="Corporate event mein log baat kar rahe hain"></div><div class="md:w-1/2 text-center md:text-left"><h2 class="text-4xl md:text-5xl font-bold text-gray-900">Bulk Orders & Events?</h2><div class="w-24 h-1.5 accent-gold-bg mt-4 mb-6 mx-auto md:mx-0 rounded-full"></div><p class="text-gray-600 mb-8 text-lg">Planning a wedding, party, or corporate event? We provide the best rates and <span class="font-bold accent-gold">special discounts</span> on bulk inquiries. Click below to share your requirements.</p><button id="open-inquiry-modal-btn" class="btn-gold"><i class="fas fa-calendar-check mr-2"></i> Inquire Now</button></div></div></div>
+        </section>
+        
+        <!-- Order Section -->
+        <section id="order" class="py-16 md:py-24 bg-gray-100">
+             <div class="container mx-auto px-6"><div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-3xl mx-auto"><h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">Place Your Order</h2><form id="orderForm"><div id="offer-section" class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-lg mb-6 flex items-center"><i class="fas fa-gift text-2xl mr-4"></i><div><h3 class="font-bold">New Customer Offer!</h3><label for="first-order-offer" class="flex items-center mt-1 cursor-pointer"><input type="checkbox" id="first-order-offer" class="offer-checkbox h-5 w-5 rounded border-gray-300 focus:ring-amber-500"><span class="ml-2 text-sm font-medium">First Jar FREE, only ₹5 delivery charge. (One Time Only)</span></label></div></div><div class="grid md:grid-cols-2 gap-6 mb-4"><div><label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label><input type="text" id="name" name="name" class="form-input" required></div><div><label for="phone" class="block text-gray-700 font-medium mb-2">Mobile Number</label><input type="tel" id="phone" name="phone" class="form-input" required pattern="[0-9]{10}"></div></div><div class="mb-4"><label for="address" class="block text-gray-700 font-medium mb-2">Delivery Address</label><textarea id="address" name="address" rows="3" class="form-input" required></textarea></div><div class="mb-6"><label for="quantity" class="block text-gray-700 font-medium mb-2">20L Jar Quantity</label><div id="quantity-control" class="flex items-center"><button type="button" id="decrease-qty" class="bg-gray-200 text-gray-800 font-bold w-12 h-12 rounded-l-lg hover:bg-gray-300 transition">-</button><input type="number" id="quantity" name="quantity" value="1" min="1" class="w-20 h-12 text-center text-lg font-bold form-input border-x-0 rounded-none"><button type="button" id="increase-qty" class="bg-gray-200 text-gray-800 font-bold w-12 h-12 rounded-r-lg hover:bg-gray-300 transition">+</button></div></div><div class="mb-6"><label class="block text-gray-700 font-medium mb-2">Payment Method</label><div class="grid sm:grid-cols-2 gap-4"><div class="relative"><input class="payment-radio sr-only" type="radio" id="payment-upi" name="paymentMethod" value="upi" checked><label for="payment-upi" class="flex items-center justify-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer transition"><i class="fa-brands fa-google-pay text-2xl mr-3 text-blue-600"></i><span class="font-semibold">UPI / Online</span></label></div><div class="relative"><input class="payment-radio sr-only" type="radio" id="payment-cod" name="paymentMethod" value="cod"><label for="payment-cod" class="flex items-center justify-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer transition"><i class="fas fa-hand-holding-dollar text-2xl mr-3 text-green-600"></i><span class="font-semibold">Cash on Delivery</span></label></div></div></div><div class="mb-8 bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg"><div class="flex justify-between items-center"><p class="text-xl font-semibold text-gray-800">Total Amount:</p><p id="total-price" class="text-3xl font-bold accent-gold">₹20</p></div></div><button type="submit" class="w-full btn-gold"><i class="fas fa-shield-alt mr-2"></i> Finalize Order</button></form></div></div>
+        </section>
+    </main>
+    
+    <footer class="accent-teal-bg text-white py-12"><div class="container mx-auto px-6 text-center"><p class="font-semibold text-xl">&copy; 2024 SM WATER SERVICE | Shaikh Mohsin</p><p class="mt-2 text-gray-200">The Art of Pure Water, Delivered.</p><p class="text-sm text-gray-300 mt-4">Contact: 7972709054 | Address: Kohinoor Colony, Kautha Road, Basmath, MH</p></div></footer>
+    
+    <!-- Modals -->
+    <div id="inquiry-modal" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-[60] hidden">
+        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-lg w-full mx-4 transform transition-all duration-300 scale-95">
+            <div class="flex justify-between items-center mb-6"><h2 class="text-3xl font-bold text-gray-900">Event Inquiry Form</h2><button id="close-inquiry-modal-btn" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button></div>
+            <form id="inquiryForm">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div><label for="inquiry-name" class="block text-gray-700 font-medium mb-1">Name</label><input type="text" id="inquiry-name" class="form-input" required></div>
+                    <div><label for="inquiry-phone" class="block text-gray-700 font-medium mb-1">Mobile Number</label><input type="tel" id="inquiry-phone" class="form-input" required pattern="[0-9]{10}"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                     <div><label for="inquiry-guests" class="block text-gray-700 font-medium mb-1">Guests (Approx)</label><input type="number" id="inquiry-guests" class="form-input" required></div>
+                     <div><label for="inquiry-date" class="block text-gray-700 font-medium mb-1">Event Date</label><input type="date" id="inquiry-date" class="form-input" required></div>
+                </div>
+                 <div class="mb-4">
+                    <label for="inquiry-event-type" class="block text-gray-700 font-medium mb-1">Event Type</label>
+                    <select id="inquiry-event-type" class="form-input"><option>Wedding / Shaadi</option><option>Birthday Party</option><option>Corporate Event</option><option>Religious Function</option><option>Other</option></select>
+                </div>
+                <div class="mb-6"><label for="inquiry-message" class="block text-gray-700 font-medium mb-1">Message (Optional)</label><textarea id="inquiry-message" rows="3" class="form-input" placeholder="Your specific requirements..."></textarea></div>
+                <button type="submit" class="w-full btn-gold"><i class="fab fa-whatsapp mr-2"></i> Send Inquiry via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 hidden"><div class="bg-white p-8 rounded-xl shadow-2xl text-center max-w-sm mx-4 transform transition-all duration-300 scale-95"><h2 class="text-3xl font-bold text-gray-900 mb-2">Make Payment</h2><p class="text-gray-600 mb-4">Scan the QR code to pay.</p><div class="bg-gray-100 p-4 rounded-lg"><img src="" id="payment-qr-code" class="mx-auto my-3 rounded-md border-4 border-gray-300" alt="UPI QR Code"><p class="text-lg">Amount to Pay: <span id="payment-amount" class="font-bold text-2xl accent-gold"></span></p><p class="font-semibold text-gray-800 mt-2">UPI ID: 7972709054@okbizaxis</p></div><button id="payment-done-btn" class="mt-6 w-full btn-gold"><i class="fas fa-check-circle mr-2"></i>Payment Done</button><button id="close-payment-modal" class="mt-2 text-gray-500 hover:text-gray-700">Cancel</button></div></div>
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 hidden"><div class="bg-white p-8 rounded-xl shadow-2xl text-center max-w-sm mx-4 transform transition-all duration-300 scale-95"><div class="mx-auto w-24 h-24 flex items-center justify-center bg-green-100 rounded-full mb-5"><i class="fas fa-check-circle text-6xl text-green-500"></i></div><h2 class="text-3xl font-bold text-gray-900 mb-2">Thank You!</h2><p id="success-message" class="text-gray-600 mb-4"></p><button id="close-success-modal" class="mt-6 w-full btn-gold">OK</button></div></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openInquiryBtn = document.getElementById('open-inquiry-modal-btn');
+            const inquiryModal = document.getElementById('inquiry-modal');
+            const closeInquiryBtn = document.getElementById('close-inquiry-modal-btn');
+            const inquiryForm = document.getElementById('inquiryForm');
+            const orderForm = document.getElementById('orderForm');
+            const successModal = document.getElementById('success-modal');
+            const successMessage = document.getElementById('success-message');
+            const quantityInput = document.getElementById('quantity');
+            const decreaseQtyBtn = document.getElementById('decrease-qty');
+            const increaseQtyBtn = document.getElementById('increase-qty');
+            const offerCheckbox = document.getElementById('first-order-offer');
+            const offerSection = document.getElementById('offer-section');
+            const totalPriceEl = document.getElementById('total-price');
+            const paymentModal = document.getElementById('payment-modal');
+            const paymentQrCode = document.getElementById('payment-qr-code');
+            const paymentAmount = document.getElementById('payment-amount');
+            const paymentDoneBtn = document.getElementById('payment-done-btn');
+            const closePaymentModalBtn = document.getElementById('close-payment-modal');
+            const closeSuccessModalBtn = document.getElementById('close-success-modal');
+            let whatsappUrl = '';
+            const pricePerJar = 20;
+            const offerPrice = 5;
+
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                }, 3000);
+            });
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            openInquiryBtn.addEventListener('click', () => {
+                inquiryModal.classList.remove('hidden');
+                setTimeout(() => inquiryModal.querySelector('div').classList.remove('scale-95'), 10);
+            });
+
+            closeInquiryBtn.addEventListener('click', () => {
+                inquiryModal.querySelector('div').classList.add('scale-95');
+                setTimeout(() => inquiryModal.classList.add('hidden'), 300);
+            });
+
+            inquiryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
+                const name = document.getElementById('inquiry-name').value;
+                const phone = document.getElementById('inquiry-phone').value;
+                const guests = document.getElementById('inquiry-guests').value;
+                const date = document.getElementById('inquiry-date').value;
+                const eventType = document.getElementById('inquiry-event-type').value;
+                const message = document.getElementById('inquiry-message').value;
+                let inquiryMessage = `*--- Nayi Event Inquiry! ---*\n\n*Naam:* ${name}\n*Phone:* ${phone}\n\n*-- Event Details --*\n*Event Type:* ${eventType}\n*Event Date:* ${date}\n*Expected Guests:* ${guests}\n\n`;
+                if(message) { inquiryMessage += `*Additional Message:*\n${message}\n\n`; }
+                inquiryMessage += `--- SM WATER SERVICE ---`;
+                const whatsappUrlInquiry = `https://wa.me/917972709054?text=${encodeURIComponent(inquiryMessage)}`;
+                window.open(whatsappUrlInquiry, '_blank');
+                successMessage.textContent = 'Aapki inquiry safaltapoorvak bhej di gayi hai. Hum jald hi aapse sampark karenge.';
+                successModal.classList.remove('hidden');
+                closeInquiryBtn.click();
+                inquiryForm.reset();
+            });
+
+            function checkOfferStatus() { if (localStorage.getItem('offerAvailed') === 'true') { offerSection.classList.add('offer-disabled'); offerCheckbox.disabled = true; } }
+            
+            function updateTotalPrice() {
+                let total;
+                if (offerCheckbox.checked && !offerCheckbox.disabled) {
+                    total = offerPrice;
+                    quantityInput.value = 1;
+                    quantityInput.disabled = true; decreaseQtyBtn.disabled = true; increaseQtyBtn.disabled = true;
+                } else {
+                    let quantity = parseInt(quantityInput.value);
+                    if (isNaN(quantity) || quantity < 1) { quantity = 1; quantityInput.value = 1; }
+                    total = quantity * pricePerJar;
+                    quantityInput.disabled = false; decreaseQtyBtn.disabled = false; increaseQtyBtn.disabled = false;
+                }
+                totalPriceEl.textContent = `₹${total}`;
+                return total;
+            }
+
+            function createWhatsAppMessage(totalAmount) {
+                 const name = document.getElementById('name').value, phone = document.getElementById('phone').value, address = document.getElementById('address').value;
+                 const isOfferApplied = offerCheckbox.checked, quantity = isOfferApplied ? 1 : document.getElementById('quantity').value;
+                 const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value, paymentMethodText = paymentMethod === 'cod' ? 'Cash on Delivery' : 'PAID (Online)';
+                 let message = `*--- Naya Order Aaya Hai! ---*\n\n`; if(isOfferApplied) message += `*Offer:* Pehla Order FREE Offer Applied!\n\n`;
+                 message += `*Customer:* ${name}\n*Phone:* ${phone}\n*Address:* ${address}\n\n*-- Order Details --*\n- *Product:* 20L Jar\n- *Quantity:* ${quantity}\n- *Total Amount:* ₹${totalAmount}\n- *Payment Method:* ${paymentMethodText}\n\n--- SM WATER SERVICE ---`;
+                 return `https://wa.me/917972709054?text=${encodeURIComponent(message)}`;
+            }
+
+            function sendOrder(url, amount) {
+                window.open(url, '_blank');
+                if (offerCheckbox.checked) { localStorage.setItem('offerAvailed', 'true'); checkOfferStatus(); }
+                const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+                successMessage.textContent = paymentMethod === 'cod' ? `Aapka order confirm ho gaya hai. Kripya delivery ke samay ₹${amount} cash taiyaar rakhein.` : 'Aapka order confirm ho gaya hai. Hum jald hi aapse sampark karenge.';
+                successModal.classList.remove('hidden');
+                setTimeout(() => successModal.querySelector('div').classList.remove('scale-95'), 10);
+            }
+
+            orderForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                if (!orderForm.checkValidity()) { orderForm.reportValidity(); return; }
+                const totalAmount = updateTotalPrice(); 
+                const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+                whatsappUrl = createWhatsAppMessage(totalAmount);
+                if (paymentMethod === 'upi') {
+                    const upiString = `upi://pay?pa=7972709054@okbizaxis&pn=SM%20WATER%20SERVICE&am=${totalAmount}.00&cu=INR`;
+                    paymentQrCode.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(upiString)}`;
+                    paymentAmount.textContent = `₹${totalAmount}`; 
+                    paymentModal.classList.remove('hidden');
+                    setTimeout(() => paymentModal.querySelector('div').classList.remove('scale-95'), 10);
+                } else { 
+                    sendOrder(whatsappUrl, totalAmount); 
+                }
+            });
+
+            paymentDoneBtn.addEventListener('click', () => {
+                paymentModal.querySelector('div').classList.add('scale-95');
+                setTimeout(() => { paymentModal.classList.add('hidden'); sendOrder(whatsappUrl); }, 300);
+            });
+
+            checkOfferStatus();
+            updateTotalPrice();
+            offerCheckbox.addEventListener('change', updateTotalPrice);
+            decreaseQtyBtn.addEventListener('click', () => { if (parseInt(quantityInput.value) > 1) { quantityInput.value--; updateTotalPrice(); } });
+            increaseQtyBtn.addEventListener('click', () => { quantityInput.value++; updateTotalPrice(); });
+            quantityInput.addEventListener('input', updateTotalPrice);
+            closePaymentModalBtn.addEventListener('click', () => { paymentModal.querySelector('div').classList.add('scale-95'); setTimeout(() => paymentModal.classList.add('hidden'), 300); });
+            closeSuccessModalBtn.addEventListener('click', () => {
+                successModal.querySelector('div').classList.add('scale-95');
+                setTimeout(() => { successModal.classList.add('hidden'); orderForm.reset(); offerCheckbox.checked = false; updateTotalPrice(); }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
+
