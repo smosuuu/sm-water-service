@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SM Water • Owner Dashboard</title>
+
+<style>
+:root{
+  --bg:#06111f;
+  --panel:#0d1b2d;
+  --panel2:#10243a;
+  --line:#20344d;
+  --text:#f7fbff;
+  --muted:#91a4ba;
+  --blue:#21a8ff;
+  --cyan:#59dcff;
+  --green:#25d58a;
+  --amber:#ffc857;
+  --red:#ff667a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(160deg,#06111f,#09192b 55%,#07111e);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+}
+button,input{font:inherit}
+button{border:0;cursor:pointer}
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:16px 14px 100px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.mark{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  background:linear-gradient(145deg,#22b7ff,#1472ff);
+  position:relative;
+  box-shadow:0 10px 30px #008cff35;
+}
+.mark:after{
+  content:"";
+  position:absolute;
+  width:15px;
+  height:21px;
+  background:#fff;
+  border-radius:65% 35% 65% 35%;
+  transform:rotate(45deg);
+  left:14px;
+  top:8px;
+}
+.brand b{font-size:17px}
+.brand small{
+  display:block;
+  color:var(--muted);
+  margin-top:2px;
+  font-size:11px;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+.logout{
+  background:#13263b;
+  color:#d9e8f7;
+  border:1px solid var(--line);
+  padding:10px 13px;
+  border-radius:12px;
+}
+h1{font-size:26px;margin:10px 0 4px}
+h2{font-size:20px;margin:8px 0}
+.sub{
+  color:var(--muted);
+  margin-bottom:18px;
+  font-size:13px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.card{
+  background:linear-gradient(145deg,#0d1b2d,#0b1828);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:15px;
+  box-shadow:0 14px 40px #0002;
+}
+.stat span{
+  color:var(--muted);
+  font-size:11px;
+}
+.stat b{
+  font-size:24px;
+  display:block;
+  margin-top:7px;
+}
+.blue{color:var(--cyan)}
+.green{color:var(--green)}
+.amber{color:var(--amber)}
+.section{margin-top:20px}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.refresh{
+  background:#11283e;
+  color:#bfe9ff;
+  padding:9px 12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+}
+.orders{
+  display:grid;
+  gap:10px;
+}
+.order{
+  background:#0b192a;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:15px;
+}
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+.name{font-weight:800}
+.time{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:3px;
+}
+.amount{
+  font-weight:800;
+  color:#fff;
+}
+.meta{
+  color:#b8c8d8;
+  font-size:13px;
+  margin:8px 0;
+  line-height:1.55;
+}
+.pill{
+  display:inline-block;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+  background:#17314b;
+  color:#a9dfff;
+  margin-bottom:10px;
+}
+.actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.actions button{
+  padding:9px 10px;
+  border-radius:10px;
+  background:#122b43;
+  color:#dff4ff;
+  border:1px solid #24435e;
+  font-size:11px;
+}
+.actions .ok{
+  background:#0d5c42;
+  border-color:#167c5a;
+}
+.actions .danger{
+  background:#5a2430;
+  border-color:#813646;
+}
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:30px;
+}
+.page{display:none}
+.page.active{display:block}
+.list{
+  display:grid;
+  gap:10px;
+}
+.customer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.customer b{display:block}
+.customer small{
+  color:var(--muted);
+  line-height:1.5;
+}
+.product-list{
+  display:grid;
+  gap:10px;
+}
+.product{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.product span{
+  color:var(--cyan);
+  font-weight:800;
+}
+.offer-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.offer-card small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+}
+.switch{
+  position:relative;
+  width:48px;
+  height:28px;
+}
+.switch input{display:none}
+.switch span{
+  position:absolute;
+  inset:0;
+  background:#26394e;
+  border-radius:20px;
+}
+.switch span:after{
+  content:"";
+  position:absolute;
+  width:22px;
+  height:22px;
+  top:3px;
+  left:3px;
+  background:white;
+  border-radius:50%;
+  transition:.2s;
+}
+.switch input:checked+span{background:#168f67}
+.switch input:checked+span:after{
+  transform:translateX(20px);
+}
+.settings-card{
+  display:grid;
+  gap:8px;
+  margin-bottom:10px;
+}
+.settings-card label{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+}
+.settings-card input{
+  width:100%;
+  padding:11px 12px;
+  border-radius:10px;
+  border:1px solid #29425d;
+  background:#081523;
+  color:#fff;
+}
+.primary{
+  width:100%;
+  padding:13px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#1599ee,#216dff);
+  color:#fff;
+  font-weight:800;
+}
+.small{
+  width:auto;
+  padding:11px 15px;
+  margin-top:5px;
+}
+.success{
+  color:var(--green);
+  font-size:12px;
+  min-height:16px;
+}
+.bottom-nav{
+  position:sticky;
+  bottom:8px;
+  z-index:5;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:3px;
+  margin:22px 0 0;
+  padding:7px;
+  background:#0b192aee;
+  border:1px solid var(--line);
+  border-radius:17px;
+  backdrop-filter:blur(14px);
+}
+.nav-btn{
+  background:transparent;
+  color:#7890a8;
+  padding:6px 2px;
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+  font-size:9px;
+}
+.nav-btn strong{
+  font-size:18px;
+  line-height:18px;
+}
+.nav-btn.active{
+  background:#12304a;
+  color:#dff6ff;
+}
+.nav-btn.active strong{color:var(--cyan)}
+.login{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:20px;
+}
+.loginbox{
+  width:min(430px,100%);
+  background:#0b192a;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 25px 80px #0005;
+}
+.field{margin:14px 0}
+.field label{
+  display:block;
+  color:#a9b9ca;
+  font-size:11px;
+  margin-bottom:7px;
+}
+.field input{
+  width:100%;
+  padding:13px 14px;
+  border-radius:12px;
+  border:1px solid #29425d;
+  background:#081523;
+  color:#fff;
+  outline:none;
+}
+.error{
+  color:#ff8898;
+  font-size:13px;
+  margin-top:10px;
+  min-height:18px;
+}
+.hidden{display:none!important}
+.note{
+  font-size:10px;
+  color:#6f859b;
+  text-align:center;
+  margin-top:18px;
+}
+@media(max-width:700px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:420px){
+  .bottom-nav{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="login">
+  <div class="loginbox">
+
+    <div class="brand">
+      <div class="mark"></div>
+      <div>
+        <b>SM RO WATER SERVICE</b>
+        <small>Owner Control Center</small>
+      </div>
+    </div>
+
+    <h1>Owner Login</h1>
+    <div class="sub">
+      Secure access for your SM Water dashboard.
+    </div>
+
+    <div class="field">
+      <label>OWNER EMAIL</label>
+      <input id="email"
+             type="email"
+             autocomplete="username"
+             placeholder="Owner email">
+    </div>
+
+    <div class="field">
+      <label>PASSWORD</label>
+      <input id="password"
+             type="password"
+             autocomplete="current-password"
+             placeholder="Password">
+    </div>
+
+    <button id="loginBtn" class="primary">
+      Sign in
+    </button>
+
+    <div id="loginError" class="error"></div>
+
+    <div class="note">
+      sMosuuu by SM TECHNOLOGIES
+    </div>
+
+  </div>
+</div>
+
+
+<!-- APP -->
+<div id="app" class="hidden">
+
+<div class="wrap">
+
+  <div class="top">
+
+    <div class="brand">
+      <div class="mark"></div>
+      <div>
+        <b>SM RO WATER SERVICE</b>
+        <small>Owner Dashboard</small>
+      </div>
+    </div>
+
+    <button id="logoutBtn" class="logout">
+      Logout
+    </button>
+
+  </div>
+
+
+  <!-- DASHBOARD -->
+  <main id="page-dashboard" class="page active">
+
+    <h1>Good evening, Owner</h1>
+
+    <div class="sub">
+      Live order control • Basmath
+    </div>
+
+    <div class="grid">
+
+      <div class="card stat">
+        <span>NEW ORDERS</span>
+        <b id="newCount" class="blue">0</b>
+      </div>
+
+      <div class="card stat">
+        <span>OUT FOR DELIVERY</span>
+        <b id="deliveryCount" class="amber">0</b>
+      </div>
+
+      <div class="card stat">
+        <span>DELIVERED</span>
+        <b id="deliveredCount" class="green">0</b>
+      </div>
+
+      <div class="card stat">
+        <span>TODAY'S SALES</span>
+        <b id="salesCount">₹0</b>
+      </div>
+
+    </div>
+
+
+    <div class="section">
+
+      <div class="section-head">
+        <h2>Recent Orders</h2>
+        <button id="refreshBtn" class="refresh">
+          Refresh
+        </button>
+      </div>
+
+      <div id="dashboardOrders" class="orders">
+        <div class="empty">
+          Loading orders...
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ORDERS -->
+  <main id="page-orders" class="page">
+
+    <div class="section-head">
+      <h2>All Orders</h2>
+      <button class="refresh" onclick="showPage('dashboard')">
+        Dashboard
+      </button>
+    </div>
+
+    <div id="ordersPage" class="orders"></div>
+
+  </main>
+
+
+  <!-- CUSTOMERS -->
+  <main id="page-customers" class="page">
+
+    <h2>Customers</h2>
+
+    <div class="sub">
+      Customers collected from orders.
+    </div>
+
+    <div id="customersPage" class="list"></div>
+
+  </main>
+
+
+  <!-- PRODUCTS -->
+  <main id="page-products" class="page">
+
+    <h2>Products</h2>
+
+    <div class="sub">
+      Current SM Water products.
+    </div>
+
+    <div class="product-list">
+
+      <div class="card product">
+        <b>20L RO Jar</b>
+        <span>₹20 / jar</span>
+      </div>
+
+      <div class="card product">
+        <b>1L Bottles</b>
+        <span>₹240 / 24 bottles</span>
+      </div>
+
+      <div class="card product">
+        <b>New Customer Offer</b>
+        <span>First jar FREE + ₹5 delivery</span>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- OFFERS -->
+  <main id="page-offers" class="page">
+
+    <h2>Offers</h2>
+
+    <div class="sub">
+      Manage customer offers.
+    </div>
+
+    <div class="card offer-card">
+
+      <div>
+        <b>First Jar Offer</b>
+        <small>
+          First 20L jar FREE + ₹5 delivery
+        </small>
+      </div>
+
+      <label class="switch">
+        <input id="offerToggle" type="checkbox" checked>
+        <span></span>
+      </label>
+
+    </div>
+
+
+    <div class="card offer-card">
+
+      <div>
+        <b>Business Status</b>
+        <small id="businessStatusText">
+          Accepting orders
+        </small>
+      </div>
+
+      <label class="switch">
+        <input id="businessToggle" type="checkbox" checked>
+        <span></span>
+      </label>
+
+    </div>
+
+  </main>
+
+
+  <!-- SETTINGS -->
+  <main id="page-settings" class="page">
+
+    <h2>Settings</h2>
+
+    <div class="sub">
+      Owner controls.
+    </div>
+
+    <div class="card settings-card">
+
+      <label>20L JAR PRICE</label>
+      <input id="jarPrice" type="number" value="20">
+
+      <label>1L CASE PRICE</label>
+      <input id="casePrice" type="number" value="240">
+
+      <label>DELIVERY AREA</label>
+      <input id="area" value="Basmath">
+
+      <button id="saveSettings" class="primary small">
+        Save Settings
+      </button>
+
+      <div id="settingsMsg" class="success"></div>
+
+    </div>
+
+
+    <div class="card settings-card">
+
+      <b>Owner Account</b>
+
+      <div class="meta">
+        Firebase Authentication is used for owner login.
+      </div>
+
+      <button id="logoutBtn2" class="logout">
+        Logout
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- NAVIGATION -->
+  <nav class="bottom-nav">
+
+    <button data-page="dashboard" class="nav-btn active">
+      <strong>⌂</strong>
+      <span>Home</span>
+    </button>
+
+    <button data-page="orders" class="nav-btn">
+      <strong>▤</strong>
+      <span>Orders</span>
+    </button>
+
+    <button data-page="customers" class="nav-btn">
+      <strong>♙</strong>
+      <span>Customers</span>
+    </button>
+
+    <button data-page="products" class="nav-btn">
+      <strong>◈</strong>
+      <span>Products</span>
+    </button>
+
+    <button data-page="offers" class="nav-btn">
+      <strong>✦</strong>
+      <span>Offers</span>
+    </button>
+
+    <button data-page="settings" class="nav-btn">
+      <strong>⚙</strong>
+      <span>Settings</span>
+    </button>
+
+  </nav>
+
+
+  <div class="note">
+    SM Water • Owner Panel • sMosuuu by SM TECHNOLOGIES
+  </div>
+
+</div>
+</div>
+
+
+<script type="module">
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  query,
+  orderBy,
+  onSnapshot,
+  doc,
+  updateDoc,
+  deleteDoc
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+  apiKey:
+  "AIzaSyCNuap_5TigXXXz6TmPhIMupLkSe3s_86Q",
+
+  authDomain:
+  "sm-water-service-e1b48.firebaseapp.com",
+
+  projectId:
+  "sm-water-service-e1b48",
+
+  storageBucket:
+  "sm-water-service-e1b48.firebasestorage.app",
+
+  messagingSenderId:
+  "581807677819",
+
+  appId:
+  "1:581807677819:web:3e7ea6f8832b3fdf0f9dde",
+
+  measurementId:
+  "G-XM79BLL6EP"
+};
+
+
+/* OWNER UID */
+
+const OWNER_UID =
+"P155BtHtCGZHTBbhxvg40RvFSP83";
+
+
+const firebaseApp =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(firebaseApp);
+
+const db =
+getFirestore(firebaseApp);
+
+
+const $ =
+id => document.getElementById(id);
+
+let unsubscribe = null;
+let allOrders = [];
+
+
+/* LOGIN */
+
+$("loginBtn").onclick = async () => {
+
+  $("loginError").textContent = "";
+
+  const email =
+    $("email").value.trim();
+
+  const password =
+    $("password").value;
+
+  if(!email || !password){
+
+    $("loginError").textContent =
+      "Email aur password enter karo.";
+
+    return;
+  }
+
+  $("loginBtn").disabled = true;
+
+  $("loginBtn").textContent =
+    "Signing in...";
+
+  try{
+
+    const cred =
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+    if(cred.user.uid !== OWNER_UID){
+
+      await signOut(auth);
+
+      throw new Error(
+        "This account is not authorized as owner."
+      );
+    }
+
+  }catch(error){
+
+    $("loginError").textContent =
+      error.message ||
+      "Login failed.";
+
+  }finally{
+
+    $("loginBtn").disabled = false;
+
+    $("loginBtn").textContent =
+      "Sign in";
+  }
+};
+
+
+/* LOGOUT */
+
+$("logoutBtn").onclick =
+  () => signOut(auth);
+
+$("logoutBtn2").onclick =
+  () => signOut(auth);
+
+
+/* NAVIGATION */
+
+window.showPage = function(name){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(page =>
+      page.classList.remove("active")
+    );
+
+  const target =
+    $("page-" + name);
+
+  if(target)
+    target.classList.add("active");
+
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach(button =>
+      button.classList.toggle(
+        "active",
+        button.dataset.page === name
+      )
+    );
+
+  if(name === "orders")
+    renderOrdersPage(allOrders);
+
+  if(name === "customers")
+    renderCustomers(allOrders);
+};
+
+
+document
+  .querySelectorAll(".nav-btn")
+  .forEach(button => {
+
+    button.onclick = () =>
+      showPage(button.dataset.page);
+
+  });
+
+
+/* AUTH STATE */
+
+onAuthStateChanged(auth,user => {
+
+  if(
+    user &&
+    user.uid === OWNER_UID
+  ){
+
+    $("login")
+      .classList.add("hidden");
+
+    $("app")
+      .classList.remove("hidden");
+
+    startOrders();
+
+  }else{
+
+    $("app")
+      .classList.add("hidden");
+
+    $("login")
+      .classList.remove("hidden");
+
+    if(unsubscribe){
+
+      unsubscribe();
+      unsubscribe = null;
+    }
+  }
+
+});
+
+
+/* FIRESTORE ORDERS */
+
+function startOrders(){
+
+  if(unsubscribe)
+    unsubscribe();
+
+  const ordersQuery =
+    query(
+      collection(db,"orders"),
+      orderBy("createdAt","desc")
+    );
+
+  unsubscribe =
+    onSnapshot(
+      ordersQuery,
+
+      snapshot => {
+
+        allOrders =
+          snapshot.docs.map(
+            document => ({
+              id:document.id,
+              ...document.data()
+            })
+          );
+
+        render(allOrders);
+
+      },
+
+      error => {
+
+        console.error(error);
+
+        $("dashboardOrders").innerHTML =
+        `<div class="empty">
+          Orders load nahi hue.<br>
+          Firestore rules/config check karo.
+        </div>`;
+      }
+    );
+}
+
+
+/* DASHBOARD */
+
+function render(orders){
+
+  let fresh = 0;
+  let out = 0;
+  let delivered = 0;
+  let sales = 0;
+
+  const today =
+    new Date();
+
+  today.setHours(
+    0,0,0,0
+  );
+
+
+  orders.forEach(order => {
+
+    const status =
+      String(
+        order.status || "New"
+      ).toLowerCase();
+
+
+    if(status === "new")
+      fresh++;
+
+    if(status === "out for delivery")
+      out++;
+
+    if(status === "delivered")
+      delivered++;
+
+
+    const date =
+      order.createdAt?.toDate
+      ? order.createdAt.toDate()
+      : new Date(
+          order.createdAt || 0
+        );
+
+
+    if(
+      date >= today &&
+      status !== "cancelled"
+    ){
+
+      sales +=
+        Number(order.total || 0);
+    }
+
+  });
+
+
+  $("newCount").textContent =
+    fresh;
+
+  $("deliveryCount").textContent =
+    out;
+
+  $("deliveredCount").textContent =
+    delivered;
+
+  $("salesCount").textContent =
+    "₹" + sales;
+
+
+  if(!orders.length){
+
+    $("dashboardOrders").innerHTML =
+      `<div class="empty">
+        No orders yet.
+      </div>`;
+
+    return;
+  }
+
+
+  $("dashboardOrders").innerHTML =
+    orders.slice(0,10)
+    .map(orderCard)
+    .join("");
+}
+
+
+/* ORDER CARD */
+
+function orderCard(order){
+
+  const status =
+    order.status || "New";
+
+  const customer =
+    order.customerName ||
+    order.name ||
+    "Customer";
+
+  const phone =
+    order.phone || "";
+
+  const address =
+    order.address || "";
+
+  const total =
+    Number(
+      order.total ||
+      order.amount ||
+      0
+    );
+
+
+  let items = "Order";
+
+  if(Array.isArray(order.items)){
+
+    items =
+      order.items
+      .map(item => {
+
+        if(typeof item === "string")
+          return item;
+
+        return (
+          (item.name || "Item") +
+          " × " +
+          (item.qty || 1)
+        );
+
+      })
+      .join(", ");
+
+  }else if(order.jars){
+
+    items =
+      order.jars +
+      " × 20L Jar";
+  }
+
+
+  return `
+  <div class="order">
+
+    <div class="row">
+
+      <div>
+        <div class="name">
+          ${esc(customer)}
+        </div>
+
+        <div class="time">
+          ${esc(formatDate(order.createdAt))}
+        </div>
+      </div>
+
+      <div class="amount">
+        ₹${total}
+      </div>
+
+    </div>
+
+
+    <div class="meta">
+
+      <b>${esc(items)}</b>
+
+      <br>
+
+      ${esc(phone)}
+
+      <br>
+
+      ${esc(address)}
+
+    </div>
+
+
+    <span class="pill">
+      ${esc(status)}
+    </span>
+
+
+    <div class="actions">
+
+      ${
+        status !== "Confirmed"
+        ?
+        `<button
+          class="ok"
+          onclick="setStatus('${order.id}','Confirmed')">
+          Confirm
+        </button>`
+        :
+        ""
+      }
+
+
+      ${
+        status !== "Out for Delivery"
+        ?
+        `<button
+          onclick="setStatus('${order.id}','Out for Delivery')">
+          Out for delivery
+        </button>`
+        :
+        ""
+      }
+
+
+      ${
+        status !== "Delivered"
+        ?
+        `<button
+          class="ok"
+          onclick="setStatus('${order.id}','Delivered')">
+          Delivered
+        </button>`
+        :
+        ""
+      }
+
+
+      <button
+        onclick="callCustomer('${encodeURIComponent(phone)}')">
+        Call
+      </button>
+
+
+      <button
+        class="danger"
+        onclick="removeOrder('${order.id}')">
+        Delete
+      </button>
+
+    </div>
+
+  </div>`;
+}
+
+
+/* UPDATE STATUS */
+
+window.setStatus =
+async function(id,status){
+
+  try{
+
+    await updateDoc(
+      doc(db,"orders",id),
+      {
+        status:status,
+        updatedAt:new Date()
+      }
+    );
+
+  }catch(error){
+
+    alert(
+      "Status update failed: " +
+      error.message
+    );
+  }
+};
+
+
+/* DELETE */
+
+window.removeOrder =
+async function(id){
+
+  if(!confirm(
+    "Delete this order?"
+  ))
+    return;
+
+  try{
+
+    await deleteDoc(
+      doc(db,"orders",id)
+    );
+
+  }catch(error){
+
+    alert(
+      "Delete failed: " +
+      error.message
+    );
+  }
+};
+
+
+/* CALL */
+
+window.callCustomer =
+function(phone){
+
+  const number =
+    decodeURIComponent(phone);
+
+  if(number)
+    location.href =
+      "tel:" + number;
+};
+
+
+/* ALL ORDERS */
+
+function renderOrdersPage(orders){
+
+  if(!orders.length){
+
+    $("ordersPage").innerHTML =
+      `<div class="empty">
+        No orders yet.
+      </div>`;
+
+    return;
+  }
+
+  $("ordersPage").innerHTML =
+    orders
+      .map(orderCard)
+      .join("");
+}
+
+
+/* CUSTOMERS */
+
+function renderCustomers(orders){
+
+  const map =
+    new Map();
+
+
+  orders.forEach(order => {
+
+    const phone =
+      order.phone || "";
+
+    if(!phone)
+      return;
+
+
+    const old =
+      map.get(phone);
+
+
+    map.set(
+      phone,
+      {
+        name:
+          order.customerName ||
+          order.name ||
+          "Customer",
+
+        phone:phone,
+
+        address:
+          order.address || "",
+
+        count:
+          (old?.count || 0) + 1
+      }
+    );
+
+  });
+
+
+  const customers =
+    [...map.values()];
+
+
+  if(!customers.length){
+
+    $("customersPage").innerHTML =
+      `<div class="empty">
+        No customers yet.
+      </div>`;
+
+    return;
+  }
+
+
+  $("customersPage").innerHTML =
+    customers.map(customer => `
+
+      <div class="card customer">
+
+        <div>
+
+          <b>
+            ${esc(customer.name)}
+          </b>
+
+          <small>
+            ${esc(customer.phone)}
+            <br>
+            ${esc(customer.address)}
+          </small>
+
+        </div>
+
+        <span class="pill">
+          ${customer.count}
+          order${customer.count > 1 ? "s" : ""}
+        </span>
+
+      </div>
+
+    `).join("");
+}
+
+
+/* REFRESH */
+
+$("refreshBtn").onclick =
+() => render(allOrders);
+
+
+/* BUSINESS TOGGLE */
+
+$("businessToggle").onchange =
+event => {
+
+  $("businessStatusText")
+    .textContent =
+      event.target.checked
+      ? "Accepting orders"
+      : "Orders paused";
+};
+
+
+/* SETTINGS */
+
+$("saveSettings").onclick =
+() => {
+
+  $("settingsMsg").textContent =
+    "Settings saved.";
+
+  setTimeout(
+    () =>
+      $("settingsMsg").textContent = "",
+    1800
+  );
+};
+
+
+/* DATE */
+
+function formatDate(value){
+
+  const date =
+    value?.toDate
+    ? value.toDate()
+    : new Date(value || 0);
+
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  )
+    return "";
+
+
+  return date.toLocaleString(
+    "en-IN",
+    {
+      day:"2-digit",
+      month:"short",
+      hour:"2-digit",
+      minute:"2-digit"
+    }
+  );
+}
+
+
+/* HTML ESCAPE */
+
+function esc(value){
+
+  return String(
+    value ?? ""
+  ).replace(
+    /[&<>"']/g,
+    char => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[char])
+  );
+}
+
+</script>
+
+</body>
+</html>
