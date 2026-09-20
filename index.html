@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SM RO WATER SERVICE | Pure Water Delivered</title>
+<style>
+:root{--navy:#06131f;--blue:#087cff;--cyan:#12c8e8;--ice:#eef8fc;--text:#091a29;--muted:#6c7f8f;--line:#dce8ef;--white:#fff;--green:#15966b}
+*{box-sizing:border-box}body{margin:0;background:#f6fafc;color:var(--text);font-family:Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.top{height:34px;background:var(--navy);color:#bfe6f4;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.08em}.top b{color:#fff}
+nav{height:76px;background:#ffffffdd;backdrop-filter:blur(18px);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.05em}.mark{width:38px;height:44px;position:relative}.mark:before{content:"";position:absolute;width:29px;height:36px;left:4px;top:2px;border-radius:60% 40% 58% 42%;transform:rotate(45deg);background:linear-gradient(150deg,#21d9ee,#087cff);box-shadow:0 8px 18px #087cff35}.mark:after{content:"";position:absolute;width:9px;height:12px;background:#fff;border-radius:50%;left:14px;top:14px;opacity:.8}.links{display:flex;gap:28px;font-size:13px;font-weight:800}.links a{color:#304858}.navbtn{border:0;background:var(--navy);color:#fff;border-radius:11px;padding:11px 16px;font-weight:800}
+.hero{min-height:650px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:75px 7%;overflow:hidden;background:radial-gradient(circle at 80% 20%,#d8f7ff 0,transparent 36%),linear-gradient(120deg,#fff 0%,#f3faff 100%)}.eyebrow{font-size:11px;letter-spacing:.18em;font-weight:900;color:#087cff}.hero h1{font-size:clamp(48px,6.5vw,82px);line-height:.94;letter-spacing:-.055em;margin:18px 0}.hero h1 span{color:#087cff}.hero p{max-width:570px;color:var(--muted);font-size:17px;line-height:1.8}.actions{display:flex;gap:12px;margin-top:30px}.primary,.ghost{padding:14px 20px;border-radius:12px;font-weight:900;border:1px solid var(--line)}.primary{background:linear-gradient(135deg,#087cff,#10bfdc);color:#fff;border:0;box-shadow:0 14px 30px #087cff2e}.ghost{background:#fff}
+.visual{height:500px;position:relative;display:flex;align-items:center;justify-content:center}.orb{position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#c7f3ff 52%,#a7d7ff);box-shadow:inset 0 0 80px #fff,0 35px 70px #087cff22}.jar{z-index:2;width:215px;height:320px;border-radius:45px 45px 34px 34px;background:linear-gradient(90deg,#a9e9fb,#fff 34%,#d9f9ff 65%,#8dd7ee);border:6px solid #fff;box-shadow:22px 35px 50px #087cff35;position:relative;animation:float 4s ease-in-out infinite}.jar:before{content:"SM\\A WATER";white-space:pre;text-align:center;line-height:1.1;position:absolute;top:100px;left:28px;right:28px;padding:18px 4px;background:linear-gradient(135deg,#06131f,#087cff);color:white;border-radius:15px;font-size:18px;font-weight:1000;letter-spacing:3px}.jar:after{content:"20 L";position:absolute;bottom:27px;left:0;right:0;text-align:center;font-size:14px;font-weight:900;color:#087cff}.cap{position:absolute;z-index:3;top:75px;width:80px;height:38px;background:#087cff;border-radius:10px 10px 5px 5px}
+@keyframes float{50%{transform:translateY(-14px)}}.trust{display:flex;gap:30px;margin-top:35px;color:#718594;font-size:11px;font-weight:800}.trust b{color:#122d3d;font-size:18px;display:block;margin-bottom:4px}
+section{padding:85px 7%}.head{max-width:680px;margin-bottom:34px}.head .eyebrow{margin-bottom:10px}.head h2{font-size:42px;letter-spacing:-.04em;margin:0 0 10px}.head p{color:var(--muted);line-height:1.7}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:25px;padding:18px;display:grid;grid-template-columns:190px 1fr;gap:24px;box-shadow:0 20px 60px #0a29450b;transition:.3s}.card:hover{transform:translateY(-6px);box-shadow:0 28px 70px #0a29451c}.photo{min-height:210px;border-radius:18px;background:linear-gradient(145deg,#e9fbff,#d9eaff);display:flex;align-items:center;justify-content:center;overflow:hidden}.mini{width:100px;height:155px;border:4px solid #fff;border-radius:27px;background:linear-gradient(90deg,#9fe7f8,#fff 42%,#c9f4fb);position:relative;box-shadow:0 20px 30px #087cff22}.mini:after{content:"SM\\A WATER";white-space:pre;text-align:center;line-height:1.1;position:absolute;left:13px;right:13px;top:55px;background:#087cff;color:#fff;padding:9px 2px;border-radius:7px;font-weight:900;font-size:11px}.bottles{display:flex;gap:7px;align-items:end}.bottle{width:38px;height:135px;border:3px solid #fff;border-radius:12px 12px 15px 15px;background:linear-gradient(90deg,#9fe7f8,#fff)}.card h3{font-size:23px;margin:4px 0 8px}.tag{font-size:10px;font-weight:900;color:#087cff;letter-spacing:.12em}.price{font-size:27px;font-weight:1000;margin-top:17px}.buy{width:100%;margin-top:18px;border:0;padding:13px;border-radius:11px;background:#06131f;color:#fff;font-weight:900}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.feature{background:#fff;border:1px solid var(--line);padding:25px;border-radius:20px;min-height:170px}.feature svg{width:34px;height:34px;stroke:#087cff;margin-bottom:18px}.feature h3{font-size:16px;margin:0 0 7px}.feature p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+.offer{border-radius:28px;background:linear-gradient(120deg,#06131f,#0b3145);color:#fff;padding:45px;display:flex;justify-content:space-between;align-items:center;gap:25px;position:relative;overflow:hidden}.offer:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #6eeaff22;border-radius:50%;right:-100px;top:-120px}.offer h2{font-size:38px;margin:0}.offer p{color:#b9cbd4;line-height:1.6}.free{color:#4fe1bb}
+.order{max-width:900px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:27px;padding:30px;box-shadow:0 25px 80px #08284012}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:900;letter-spacing:.05em;color:#40596a}.field input,.field textarea,.field select{padding:13px;border:1px solid #d8e5ec;border-radius:11px;outline:0;background:#fbfdff}.field textarea{min-height:90px}.qty{display:flex;gap:8px}.qty button{width:43px;border:1px solid var(--line);background:#fff;border-radius:10px}.qty input{text-align:center;width:70px}.total{margin-top:18px;padding:18px;background:#f0f8fc;border-radius:13px;display:flex;justify-content:space-between;font-weight:1000}.submit{margin-top:12px;width:100%;padding:15px;border:0;border-radius:12px;background:linear-gradient(135deg,#087cff,#10bfdc);color:#fff;font-weight:1000}
+footer{background:#06131f;color:#a9c0cb;padding:35px 7%;display:flex;justify-content:space-between;gap:20px;line-height:1.7;font-size:12px}footer strong{color:#fff}
+@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding:55px 6%}.visual{height:360px}.orb{width:280px;height:280px}.jar{width:155px;height:235px}.cap{top:52px}.products,.features{grid-template-columns:1fr}.card{grid-template-columns:130px 1fr}.photo{min-height:175px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.offer{display:block}.offer h2{font-size:30px}}
+
+/* MOBILE-FIRST APP LAYER */
+@media(max-width:600px){
+  body{overflow-x:hidden}
+  .top{height:auto;min-height:30px;padding:7px 12px;text-align:center;font-size:9px;line-height:1.35}
+  nav{height:62px;padding:0 15px}
+  .brand{font-size:13px;letter-spacing:.02em;gap:7px}.mark{width:28px;height:32px}.links{display:none}
+  .navbtn{padding:9px 11px;border-radius:9px;font-size:11px}
+  .hero{min-height:auto;padding:42px 18px 24px;display:block}
+  .hero h1{font-size:46px;line-height:.93;margin:13px 0 16px;letter-spacing:-.06em}
+  .hero p{font-size:14px;line-height:1.65;margin:0}
+  .actions{margin-top:21px;gap:8px}.primary,.ghost{padding:12px 14px;font-size:12px}
+  .visual{height:285px;margin-top:8px}.orb{width:245px;height:245px}.jar{width:135px;height:205px;border-width:4px;border-radius:31px}.jar:before{top:62px;left:18px;right:18px;padding:12px 3px;font-size:12px;letter-spacing:2px}.jar:after{bottom:18px;font-size:10px}.cap{top:42px;width:54px;height:27px}
+  .trust{gap:14px;margin-top:22px}.trust b{font-size:15px}.trust{font-size:8px}
+  section{padding:52px 16px}.head{margin-bottom:22px}.head h2{font-size:30px}.head p{font-size:13px}
+  .products{display:block}.card{grid-template-columns:105px 1fr;gap:14px;padding:12px;border-radius:18px;margin-bottom:12px}.photo{min-height:150px;border-radius:13px}.mini{width:72px;height:115px;border-width:3px;border-radius:20px}.mini:after{top:41px;left:8px;right:8px;font-size:8px;padding:7px 1px}.bottles{gap:3px}.bottle{width:25px;height:105px;border-width:2px}
+  .card h3{font-size:17px;margin:3px 0 5px}.card p{font-size:11px!important;line-height:1.45!important}.price{font-size:21px;margin-top:9px}.buy{margin-top:9px;padding:11px 8px;font-size:11px}
+  .features{display:block}.feature{min-height:0;padding:19px;border-radius:16px;margin-bottom:10px}.feature svg{width:27px;height:27px;margin-bottom:10px}.feature h3{font-size:14px}.feature p{font-size:11px;line-height:1.5}
+  .offer{padding:27px 21px;border-radius:20px}.offer h2{font-size:27px;line-height:1.1}.offer p{font-size:12px;line-height:1.5}.offer .primary{margin-top:7px}
+  .order{padding:17px;border-radius:19px}.grid{display:block}.field{margin-bottom:13px}.field label{font-size:9px}.field input,.field textarea,.field select{padding:12px;font-size:13px;border-radius:9px}.field textarea{min-height:82px}.qty input{width:58px}.qty button{height:40px;width:40px}.total{padding:14px;font-size:16px}.submit{padding:13px;font-size:12px}
+  footer{display:block;padding:27px 18px;font-size:10px}footer>div{margin-bottom:17px}
+}
+</style>
+</head>
+<body>
+<div class="top">BASMATH HOME DELIVERY &nbsp; / &nbsp; <b>NEW CUSTOMER: FIRST 20L JAR FREE + ₹5 DELIVERY</b></div>
+<nav><a class="brand" href="#"><span class="mark"></span>SM RO WATER SERVICE</a><div class="links"><a href="#products">Products</a><a href="#why">Our Standard</a><a href="#order">Order</a><a href="#bulk">Bulk</a></div><button class="navbtn" onclick="document.querySelector('#order').scrollIntoView()">Order Water</button></nav>
+<header class="hero"><div><div class="eyebrow">THE ART OF PURE WATER</div><h1>Pure water.<br><span>Beautifully delivered.</span></h1><p>A premium local water service built for homes, offices and events. Order a 20L RO jar in seconds and receive it at your doorstep in Basmath.</p><div class="actions"><button class="primary" onclick="document.querySelector('#order').scrollIntoView()">Order a Jar</button><button class="ghost" onclick="document.querySelector('#products').scrollIntoView()">View products</button></div><div class="trust"><div><b>20L</b>RO JARS</div><div><b>₹20</b>STARTING PRICE</div><div><b>₹5</b>NEW DELIVERY</div></div></div><div class="visual"><div class="orb"></div><div class="cap"></div><div class="jar"></div></div></header>
+<section id="products"><div class="head"><div class="eyebrow">SIGNATURE PRODUCTS</div><h2>Water for every need.</h2><p>Clean presentation, transparent pricing and a straightforward ordering experience.</p></div><div class="products"><article class="card"><div class="photo"><div class="mini"></div></div><div><div class="tag">EVERYDAY ESSENTIAL</div><h3>20 Litre RO Jar</h3><p style="color:#718594;font-size:13px;line-height:1.6">The classic choice for families, shops and offices.</p><div class="price">₹20 <small style="font-size:12px;color:#718594">/ jar</small></div><button class="buy" onclick="addJar()">Add to order</button></div></article><article class="card"><div class="photo"><div class="bottles"><div class="bottle"></div><div class="bottle"></div><div class="bottle"></div><div class="bottle"></div></div></div><div><div class="tag">EVENT READY</div><h3>1L Bottles — Box</h3><p style="color:#718594;font-size:13px;line-height:1.6">Ideal for meetings, functions, guests and events.</p><div class="price">₹240 <small style="font-size:12px;color:#718594">/ 24 bottles</small></div><button class="buy" onclick="document.querySelector('#bulk').scrollIntoView()">Bulk inquiry</button></div></article></div></section>
+<section id="why"><div class="head"><div class="eyebrow">THE SM STANDARD</div><h2>Designed around your convenience.</h2><p>Not just a jar at the doorstep — a cleaner, smarter way to manage everyday drinking water.</p></div><div class="features">
+<div class="feature"><svg fill="none" viewBox="0 0 24 24"><path d="M12 3C8 8 6 10 6 14a6 6 0 0 0 12 0c0-4-2-6-6-11Z" stroke-width="1.7"/><path d="M9 15c.3 1.5 1.2 2.4 2.8 2.8" stroke-width="1.7"/></svg><h3>RO water service</h3><p>Water supplied for everyday drinking needs with a quality-first service approach.</p></div>
+<div class="feature"><svg fill="none" viewBox="0 0 24 24"><path d="M4 17h16M6 17V8h9l3 3v6M9 17a2 2 0 1 1-4 0M18 17a2 2 0 1 1-4 0" stroke-width="1.7"/></svg><h3>Doorstep delivery</h3><p>Give your address once and send your order directly to the service team.</p></div>
+<div class="feature"><svg fill="none" viewBox="0 0 24 24"><path d="M4 7h16v13H4zM7 4v6M17 4v6M4 11h16" stroke-width="1.7"/></svg><h3>Bulk & events</h3><p>Special requirements for parties, weddings, offices and other gatherings.</p></div>
+<div class="feature"><svg fill="none" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.5 7.8-8 9-4.5-1.2-8-4-8-9V6l8-3Z" stroke-width="1.7"/><path d="m9 12 2 2 4-4" stroke-width="1.7"/></svg><h3>Simple & transparent</h3><p>Product price and order details are visible before the request is sent.</p></div>
+</div></section>
+<section><div class="offer"><div><div class="eyebrow" style="color:#5ee9c5">NEW CUSTOMER PRIVILEGE</div><h2>Your first jar is <span class="free">FREE.</span></h2><p>One-time welcome offer for a new customer: first 20L jar free, with ₹5 delivery charge.</p></div><button class="primary" onclick="document.querySelector('#order').scrollIntoView()">Claim offer</button></div></section>
+<section id="order"><div class="head" style="margin-left:auto;margin-right:auto"><div class="eyebrow">FAST CHECKOUT</div><h2>Place your water order.</h2><p>Your request will be sent to WhatsApp and saved for the owner dashboard when Firebase is connected.</p></div><div class="order"><div class="grid"><div class="field"><label>FULL NAME</label><input id="name" placeholder="Your name"></div><div class="field"><label>MOBILE NUMBER</label><input id="phone" inputmode="numeric" placeholder="10-digit number"></div><div class="field full"><label>DELIVERY ADDRESS</label><textarea id="address" placeholder="House / shop, area, landmark, Basmath"></textarea></div><div class="field"><label>20L JAR QUANTITY</label><div class="qty"><button onclick="qty(-1)">−</button><input id="q" value="1" readonly><button onclick="qty(1)">+</button></div></div><div class="field"><label>PAYMENT METHOD</label><select id="pay"><option>Cash on Delivery</option><option>UPI / Online</option></select></div><div class="field full"><label>NOTE</label><input id="note" placeholder="Call before delivery, timing, etc."></div></div><div class="total"><span>Estimated total</span><span id="total">₹20</span></div><button class="submit" onclick="placeOrder()">Send Order to SM RO WATER SERVICE →</button><div style="font-size:11px;color:#718594;margin-top:10px">New customer offer is included in the order message. Owner confirms final payable amount.</div></div></section>
+<section id="bulk"><div class="head"><div class="eyebrow">BUSINESS / EVENTS</div><h2>Planning something bigger?</h2><p>Send your requirements for wedding, party, corporate or regular office supply.</p></div><div class="order"><div class="grid"><div class="field"><label>NAME</label><input id="bn" placeholder="Your name"></div><div class="field"><label>MOBILE</label><input id="bp" placeholder="Mobile number"></div><div class="field"><label>APPROX. GUESTS</label><input id="bg" placeholder="e.g. 150"></div><div class="field"><label>EVENT DATE</label><input id="bd" type="date"></div><div class="field full"><label>REQUIREMENT</label><textarea id="bm" placeholder="Tell us about your event or regular supply requirement"></textarea></div></div><button class="submit" onclick="bulk()">Send Inquiry to WhatsApp →</button></div></section>
+<footer><div><strong>SM RO WATER SERVICE</strong><br>The Art of Pure Water, Delivered.<br>Kohinoor Colony, Kautha Road, Basmath, Maharashtra</div><div>7972709054<br>UPI: 7972709054@okbizaxis</div><div><strong>sMosuuu by SM TECHNOLOGIES</strong><br>© 2026 SM RO WATER SERVICE</div></footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCNuap_5TigXXXz6TmPhIMupLkSe3s_86Q",
+  authDomain: "sm-water-service-e1b48.firebaseapp.com",
+  projectId: "sm-water-service-e1b48",
+  storageBucket: "sm-water-service-e1b48.firebasestorage.app",
+  messagingSenderId: "581807677819",
+  appId: "1:581807677819:web:3e7ea6f8832b3fdf0f9dde",
+  measurementId: "G-XM79BLL6EP"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
+
+let n = 1;
+window.qty = function(x){
+  n = Math.max(1, n + x);
+  document.getElementById("q").value = n;
+  document.getElementById("total").textContent = "₹" + (n * 20);
+};
+window.addJar = function(){
+  document.querySelector("#order").scrollIntoView({behavior:"smooth"});
+  n = 1;
+  document.getElementById("q").value = 1;
+  document.getElementById("total").textContent = "₹20";
+};
+
+function sendWA(text){
+  location.href = "https://wa.me/917972709054?text=" + encodeURIComponent(text);
+}
+
+window.placeOrder = async function(){
+  const nameEl=document.getElementById("name");
+  const phoneEl=document.getElementById("phone");
+  const addressEl=document.getElementById("address");
+  const payEl=document.getElementById("pay");
+  const noteEl=document.getElementById("note");
+
+  const customerName=nameEl.value.trim();
+  const phone=phoneEl.value.trim();
+  const address=addressEl.value.trim();
+
+  if(!customerName || !phone || !address){
+    alert("Please complete your name, mobile and address.");
+    return;
+  }
+  if(!/^\d{10}$/.test(phone)){
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  const orderId="SM"+Date.now();
+  const totalAmount=n*20;
+  const order={
+    orderId,
+    customerName,
+    phone,
+    address,
+    items:[{name:"20L RO Jar",qty:n,price:20}],
+    total:totalAmount,
+    paymentMethod:payEl.value,
+    status:"New",
+    note:noteEl.value.trim(),
+    offer:"First 20L jar FREE + ₹5 delivery",
+    createdAtClient:new Date().toISOString()
+  };
+
+  const btn=document.querySelector(".submit");
+  const oldText=btn.textContent;
+  btn.disabled=true;
+  btn.textContent="Sending order…";
+
+  try{
+    await addDoc(collection(db,"orders"),{
+      ...order,
+      createdAt:serverTimestamp()
+    });
+
+    localStorage.setItem("sm_last_order",JSON.stringify(order));
+    const list=JSON.parse(localStorage.getItem("sm_orders")||"[]");
+    list.unshift(order);
+    localStorage.setItem("sm_orders",JSON.stringify(list));
+
+    sendWA(`SM RO WATER SERVICE — NEW ORDER
+
+Order ID: ${orderId}
+Name: ${customerName}
+Mobile: ${phone}
+Address: ${address}
+20L Jars: ${n}
+Payment: ${payEl.value}
+Estimated Total: ₹${totalAmount}
+Offer: First 20L jar FREE + ₹5 delivery
+Note: ${noteEl.value||"-"}
+
+Please confirm the order.`);
+  }catch(e){
+    console.error(e);
+    alert("Order database me save nahi hua. Firebase config/API key check karo.");
+    btn.disabled=false;
+    btn.textContent=oldText;
+  }
+};
+
+window.bulk=function(){
+  const bn=document.getElementById("bn"),bp=document.getElementById("bp"),bg=document.getElementById("bg"),bd=document.getElementById("bd"),bm=document.getElementById("bm");
+  if(!bn.value.trim()||!bp.value.trim()){
+    alert("Please enter name and mobile.");
+    return;
+  }
+  sendWA(`SM RO WATER SERVICE — BULK INQUIRY
+
+Name: ${bn.value}
+Mobile: ${bp.value}
+Guests: ${bg.value||"-"}
+Date: ${bd.value||"-"}
+Requirement: ${bm.value||"-"}`);
+};
+</script></body></html>
